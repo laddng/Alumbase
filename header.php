@@ -3,7 +3,7 @@
 <html !DOCTYPE>
   <head>
     
-    <title>CSC 321 Application</title>
+    <title>WFU CS Alum Database</title>
 
     <link rel="stylesheet" media="all" href="/style/style.css" />
 
