@@ -13,24 +13,24 @@
   </tr>
 
   <?php
-    $connection = db_connect();
-    $result = db_query("SELECT * FROM users OUTER LEFT JOIN worked_at ON user_id WHERE current_company = 1");
+    $result = db_select("SELECT * FROM users NATURAL JOIN majors");
 
     if($result == false){
       header("Location: error.html");
     }
     else {
-
-    }
+      foreach ($result as $row) {
   ?>
     <tr>
-      <td><a href="/user/show.php?id=<?php echo $obj->user_id;?>"><?php echo $obj->first_name." ".$obj->last_name;?></a></td>
+      <td><a href="/user/show.php?id=<?php echo $row['user_id'];?>"><?php echo $row['first_name']." ".$row['last_name'];?></a></td>
       <!-- <td><a href="/company/show.php?company=<?php echo $obj->company_id;?>"><?php echo $obj->company_name;?></a></td> -->
       <td></td>
       <td></td>
-      <td><?php echo $obj->major;?></td>
-      <td><?php echo $obj->graduation;?></td>
+      <td><?php echo $row['major_name'];?></td>
+      <td><?php echo $row['graduation_year'];?></td>
+      <td><?php echo $row['email_address'];?></td>
     </tr>
+  <?php }} ?>
 </table>  
 
 <?php require "partials/footer.php"?>

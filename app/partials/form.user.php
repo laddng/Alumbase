@@ -21,15 +21,15 @@
   <br>
   <select name="major_id">
     <?php
-      $result = $connection->query("SELECT major_id, major_name FROM majors");
-      while($major = $result->fetch_object()){
-        if(isset($_GET["user_id"]) && ($major->major_id == $obj->major_id)){
+      $result = db_select("SELECT major_id, major_name FROM majors");
+      foreach ($result as $major) {
+        if(isset($_GET["user_id"]) && ($major['major_id'] == $obj->major_id)){
           $selected = "SELECTED";
         }
         else {
           $selected = "";
         }
-        echo "<option value=".$major->major_id." ".$selected.">".$major->major_name."</option>";
+        echo "<option value=".$major['major_id']." ".$selected.">".$major['major_name']."</option>";
       }
     ?>
   </select>

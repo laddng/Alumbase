@@ -34,7 +34,23 @@
   // Select function for DB
   function db_select($query){
     $connection = db_connect();
-    
+    $rows = array();
+    $result = db_query($query);
+
+    if($result == false){
+      return false;
+    }
+
+    while($row = mysqli_fetch_assoc($result)){
+      $rows[] = $row;
+    }
+
+    return $rows;
   }
 
+  // Sanitizing user inputs into DB
+  function db_quote($value){
+    $connection = db_connect();
+    return "'".mysqli_escape_string($connection, $value)."'";
+  }
 ?>
