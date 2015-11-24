@@ -1,10 +1,10 @@
-<?php require "../header.php";?>
+<?php require "../partials/header.php";?>
 
 <?php
 
   // The ID of the current company
   $company_id = $_GET["company"];
-  $result = $connection->query("SELECT * from company where company_id=$company_id");
+  $result = $connection->query("SELECT * from companies where company_id=$company_id");
 
   while($obj = $result->fetch_object()){
 
@@ -16,4 +16,4 @@
   $result->close();
 ?>
 
-<?php require "footer.php";?>
+<?php require "../partials/footer.php";?>

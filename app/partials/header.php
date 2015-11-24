@@ -13,8 +13,7 @@
 
     <div class="navigation">
       <div class="container">
-        <span class="six"><h2><a href="/index.php">WFU CS Alumni Database</a></h2></span>
-        <span class="four"><a href="create.php">+ Add new alum</a></span>
+        <h2><a href="/index.php">WFU CS Alumni Database</a></h2>
       </div>
     </div>
 
