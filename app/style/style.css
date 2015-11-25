@@ -38,6 +38,23 @@ th {
   text-align: left;
 }
 
+ul, li {
+  list-style: none;
+}
+
+ul {
+  border-top: 1px solid #DEDEDE;
+  padding-top: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   width: 100%;
