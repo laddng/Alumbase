@@ -5,7 +5,8 @@
 
     static $connection;
     if(!isset($connection)){
-      $config = parse_ini_file("../config.ini");
+      $path = dirname($_SERVER['DOCUMENT_ROOT']);
+      $config = parse_ini_file($path."/config.ini");
 
       $connection = new mysqli('localhost', $config["user"], $config["password"], $config["dbname"]);
     }

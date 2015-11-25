@@ -4,16 +4,22 @@
 
   // The ID of the current company
   $company_id = $_GET["company"];
-  $result = $connection->query("SELECT * from companies where company_id=$company_id");
+  $result = db_select("SELECT * from companies where companies.company_id=$company_id");
 
-  while($obj = $result->fetch_object()){
-
+  foreach ($result as $company) {
 ?>
-  <h2><?php echo $obj->company_name;?></h2>
-
-<?
-  }
-  $result->close();
-?>
-
+  <h2><?php echo $company['company_name'];?></h2>
+  <ul>
+    <li><b>Location:</b> <?php echo $company['company_location'];?></li>
+    <li><b>URL:</b> <a href="http://<?php echo $company['company_url'];?>"><?php echo $company['company_url'];?></a></li>
+  </ul>
+  <h5>Alumni Who Have Worked At <?php echo $company['company_name'];?></h5>
+  <ul>
+    <?php
+      $alumni = db_select("SELECT * FROM worked_at NATURAL JOIN users where worked_at.company_id = $company_id");
+      foreach ($alumni as $value){
+    ?>
+      <li><a href="../user/show.php?id=<?php echo $value['user_id'];?>"><?php echo $value['first_name']." ".$value['last_name'];?></a></li>
+    <? }} ?>
+  </ul>
 <?php require "../partials/footer.php";?>

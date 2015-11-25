@@ -46,7 +46,7 @@ footer {
   padding: 40px 0;
 }
 
-input[type="text"], select, input[type="submit"]{
+input[type="text"], input[type="email"], select, input[type="submit"]{
   padding: 5px;
   margin-bottom: 10px;
   font-size: 14px;
