@@ -13,7 +13,7 @@
 
     <div class="navigation">
       <div class="container">
-        <h2><a href="/index.php">WFU Tech Alumni Database</a></h2>
+        <h3><a href="/index.php">WFU Tech Alumni Database</a></h3>
       </div>
     </div>
 

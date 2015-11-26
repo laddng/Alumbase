@@ -49,6 +49,19 @@
     return $rows;
   }
 
+  // Exists function for DB
+  function db_exists($query){
+    $connection = db_connect();
+    $result = db_query($query);
+    $exists = mysqli_fetch_row($result);
+    if($exists[0] == 0){
+      return false;
+    }
+    else {
+      return $exists;
+    }
+  }
+
   // Sanitizing user inputs into DB
   function db_quote($value){
     $connection = db_connect();

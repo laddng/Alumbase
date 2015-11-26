@@ -8,18 +8,20 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
+  min-height: 90%;
 }
 
 .navigation {
   width: 100%;
-  background-color: #DEDEDE;
-  height: 70px;
+  background-color: #EEEEEE;
+  height: 50px;
+  line-height: 100%;
   float: left;
   margin-bottom: 20px;
 }
 
 .navigation a {
-  color: black;
+  color: #444;
   text-decoration: none;
 }
 
@@ -43,7 +45,7 @@ ul, li {
 }
 
 ul {
-  border-top: 1px solid #DEDEDE;
+  border-top: 1px solid #EEEEEE;
   padding-top: 10px;
 }
 
@@ -59,7 +61,7 @@ footer {
   text-align: center;
   width: 100%;
   margin-top: 20px;
-  background-color: #DEDEDE;
+  background-color: #EEEEEE;
   padding: 40px 0;
 }
 
@@ -69,7 +71,7 @@ input[type="text"], input[type="email"], select, input[type="submit"]{
   font-size: 14px;
   width: 50%;
   border-radius: 3px;
-  border: 1px solid #DEDEDE;
+  border: 1px solid #EEEEEE;
 }
 
 label {
