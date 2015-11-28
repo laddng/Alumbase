@@ -30,7 +30,7 @@
 <? } ?>
   <a href="../company/create.php?user_id=<?php echo $user_info['user_id'];?>">+ Add work experience</a>
   <form action="delete.php" method="POST">
-    <input type="hidden" name="user_id" value="user_id" value="<?php echo $_GET['user_id'];?>">
+    <input type="hidden" name="user_id" value="<?php echo $_GET['id'];?>">
     <br>
     <input type="submit" class="delete" value="Delete User" name="submit">
   </form>
