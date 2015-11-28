@@ -8,7 +8,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
-  min-height: 90%;
+  min-height: 81%;
 }
 
 .navigation {
@@ -44,13 +44,21 @@ ul, li {
   list-style: none;
 }
 
-ul {
-  border-top: 1px solid #EEEEEE;
-  padding-top: 10px;
+.box {
+  border: 1px solid #F2F2F2;
+  padding: 1px;
+  margin: 3px;
+  width: 60%;
+  background-color: #EEEEEE;
+}
+
+.delete {
+  color: red;
 }
 
 a {
   text-decoration: none;
+  color: #3BB9FF;
 }
 
 a:hover {
@@ -72,6 +80,7 @@ input[type="text"], input[type="email"], select, input[type="submit"]{
   width: 50%;
   border-radius: 3px;
   border: 1px solid #EEEEEE;
+  background-color: #F2F2F2;
 }
 
 label {

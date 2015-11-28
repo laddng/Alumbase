@@ -45,38 +45,4 @@
   <input type="text" value="<?php if(isset($_GET['user_id'])){ echo $row['graduation_year'];}?>" name="graduation_year" placeholder="Enter their year of graduation">
   <br>
   <br>
-  <hr>
-  <?php 
-
-    $company_info;
-
-    if(isset($_GET["user_id"])){
-      $user_id = $_GET["user_id"];
-      $result = db_select("SELECT * FROM (SELECT * FROM worked_at NATURAL JOIN companies WHERE user_id=$user_id) as w_a NATURAL JOIN job_types");
-      foreach ($result as $row) {
-        $company_info = $row;
-      }
-    }
-  ?>
-  <h4>Company Currently Working At</h4>
-  <label for="company_name">Company Name</label>
-  <br>
-  <input type="text" value="<?php if(isset($_GET['user_id'])){ echo $row['company_name'];}?>" name="company_name" placeholder="Enter name of company">
-  <br>
-  <label for="company_location">Company Location</label>
-  <br>
-  <input type="text" value="<?php if(isset($_GET['user_id'])){ echo $row['company_location'];}?>" name="company_location" placeholder="Enter location of company">
-  <br>
-  <label for="company_url">Company URL</label>
-  <br>
-  <input type="text" value="<?php if(isset($_GET['user_id'])){ echo $row['company_url'];}?>" name="company_url" placeholder="Enter the URL of the company">
-  <br>
-  <label for="job_type_name">Job Position</label>
-  <br>
-  <input type="text" value="<?php if(isset($_GET['user_id'])){ echo $row['job_type_name'];}?>" placeholder="Enter the name of job position" name="job_type_name">
-  <br>
-  <label for="job_type_name">Start Year</label>
-  <br>
-  <input type="text" value="<?php if(isset($_GET['user_id'])){ echo $row['year_start'];}?>" placeholder="Enter the year started at company" name="year_start">
-  <br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" name="submit">

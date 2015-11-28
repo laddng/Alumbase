@@ -11,18 +11,28 @@
   <ul>
     <li><em><?php echo $user_info['major_name']." ".$user_info['graduation_year'];?></em></li>
     <li><b>Email: </b><a href="mailto:<?php echo $user_info['email_address'];?>"><?php echo $user_info['email_address'];?></a></li>
+    <br>
+    <li><a href="edit.php?user_id=<?php echo $user_info['user_id'];?>">Edit <?php echo $user_info['first_name'];?>'s profile</a></li>
   </ul>
 <?php
   foreach ($work_info as $work) {
 ?>
-  <ul>
-    <li><b><a href="../company/show.php?company=<?php echo $work['company_id'];?>"><?php echo $work['company_name'];?></a></b></li>
-    <li><?php echo $work['company_location'];?></li>
-    <li><a href="http://<?php echo $work['company_url'];?>"><?php echo $work['company_url'];?></a></li>
-    <li><em><?php echo $work['year_start']." - ". $work['year_end'];?></em></li>
-  </ul>
+  <div class="box">
+    <ul>
+      <li><b><a href="../company/show.php?company=<?php echo $work['company_id'];?>"><?php echo $work['company_name'];?></a></b> - <?php echo $work['job_type_name'];?></li>
+      <li><?php echo $work['company_location'];?></li>
+      <li><a href="http://<?php echo $work['company_url'];?>"><?php echo $work['company_url'];?></a></li>
+      <li><em><?php echo $work['year_start']." - ". $work['year_end'];?></em></li>
+      <br>
+      <li><a href="../company/edit.php?company_id=<?php echo $work['company_id'];?>&user_id=<?php echo $user_info['user_id'];?>&job_type_id=<?php echo $work['job_type_id'];?>">Edit work experience</a></li>
+    </ul>
+  </div>
 <? } ?>
-  <a href="edit.php?user_id=<?php echo $user_info['user_id'];?>">Edit <?php echo $user_info['first_name'];?>'s profile</a> | 
-  <a href="../company/create.php?user_id=<?php echo $user_info['user_id'];?>">Add previous work experience</a>
+  <a href="../company/create.php?user_id=<?php echo $user_info['user_id'];?>">+ Add work experience</a>
+  <form action="delete.php" method="POST">
+    <input type="hidden" name="user_id" value="user_id" value="<?php echo $_GET['user_id'];?>">
+    <br>
+    <input type="submit" class="delete" value="Delete User" name="submit">
+  </form>
 
 <?php require "../partials/footer.php";?>
