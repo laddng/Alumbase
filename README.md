@@ -7,5 +7,5 @@ To run, simply spin up a LAMP stack or any local server that executes PHP, and n
 You will need to connect to your SQL database by providing proper configuration in the `config.ini` file.
 
 ## License
-MIT License.
+This framework is licensed under the MIT License.
 
